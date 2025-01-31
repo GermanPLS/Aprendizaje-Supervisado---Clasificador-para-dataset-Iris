@@ -34,11 +34,12 @@ Se midió cuatro rasgos de cada muestra: el largo y ancho del sépalo y pétalo,
 
                 Iris virginica
 ```
-![alt text](<flor Iris con Python/2018-10-17-classificacao-iris-01.png>)
 
-![alt text](<flor Iris con Python/2018-10-17-classificacao-iris-03.png>)
+![image](https://github.com/user-attachments/assets/dda17548-1d7e-4826-8a1d-0a1e236694aa)
+![image](https://github.com/user-attachments/assets/edd3a51a-4ac5-45a0-b9d8-7bd37e9a66d3)
+![image](https://github.com/user-attachments/assets/b697eab7-2dbf-4e61-8ce5-47bfa936575a)
 
-![alt text](<flor Iris con Python/Captura de pantalla 2025-01-03 100520.png>)
+
 
 ## Codigo python
 
@@ -112,7 +113,8 @@ iris.head()
 
 Salida:
 
-![alt text](<flor Iris con Python/1.png>)
+![image](https://github.com/user-attachments/assets/058d5712-eb55-4628-995c-b472a13403ab)
+
 
 
 
@@ -122,7 +124,8 @@ Salida:
 iris.info()
 ```
 
-![alt text](<flor Iris con Python/2.png>)
+![image](https://github.com/user-attachments/assets/338eb873-b269-436c-8aed-daf231616596)
+
 ```py
 Como podemos observar, todas las columnas contienen 150 datos, en las primeras tenemos datos flotantes mientras que la última contiene datos objetos y es justamente acá en donde se encuentra la información de las especies de la flor.
 ```
@@ -134,7 +137,8 @@ print('Distribución de las especies de Iris:')
 print(iris.groupby('Species').size())
 
 ```
-![alt text](<flor Iris con Python/3.png>)
+![image](https://github.com/user-attachments/assets/db617603-5e74-4ba6-9ee1-2f15e150867f)
+
 ```txt
 Como podemos observar tenemos 50 datos/muestras para cada una de las especies() Iris setosa, Iris versicolor e Iris Virginica).
 ```
@@ -144,13 +148,15 @@ Como podemos observar tenemos 50 datos/muestras para cada una de las especies() 
 print("\nValores nulos por columna:")
 print(iris.isnull().sum())
 ```
-![alt text](<flor Iris con Python/3.1.png>)
+![image](https://github.com/user-attachments/assets/92f10e6e-b289-4605-bc6d-eb8eeb259188)
+
 ```py
 # Estadísticas básicas de las columnas numéricas (media, desviación estándar, etc.).
 
 iris.describe()
 ```
-![alt text](<flor Iris con Python/4.png>)
+![image](https://github.com/user-attachments/assets/e877ffed-e837-4555-8ae3-df4682d85859)
+
 
 ### 4 - Transforaciones
 ```py
@@ -160,14 +166,13 @@ iris = iris.drop(columns=['Id'])
 iris.head()
 ```
 
-![alt text](<flor Iris con Python/5.png>)
+![image](https://github.com/user-attachments/assets/0003edb2-281d-4967-b54c-a27be53dd063)
+
 
 ### 5 - Visualización de los datos
-```py
+
 Ahora, vamos a representar gráficamente la información para que sea más fácil de entender y analizar. 
 Asi, de esta forma, nos pueda permitir  identificar patrones, tendencias y anomalías en los datos de manera más intuitiva que simplemente observando tablas o números.
-```
-
 
 ```py
 # Gráficos de barras: Comparan categorías.
@@ -188,7 +193,8 @@ plt.ylabel("Cantidad")
 # Mostrar el gráfico
 plt.show()
 ```
-![alt text](<flor Iris con Python/7.png>)
+![image](https://github.com/user-attachments/assets/bc534685-eec8-4fc2-a8e6-4fc70ae68b02)
+
 
 ```py
 # Diagramas de dispersión: Analizan relaciones entre dos variables
@@ -246,14 +252,13 @@ plt.show(
 
 
 
-![alt text](image.png)
-
-![alt text](image-1.png)
+![image](https://github.com/user-attachments/assets/440c5b82-5af9-4094-a49a-a6c7fd260278)
 
 
+![image](https://github.com/user-attachments/assets/2cccebc2-3a40-4b71-962a-6efca3d6c4b7)
 
 
-## **Conclusiones generales:**
+Mirando los graficos, podemos sacar conclusiones:
 
 
  ¿Las especies tienen agrupaciones bien definidas o están mezcladas?
@@ -294,25 +299,24 @@ sns.FacetGrid(iris, hue="Species", height=6).map(sns.kdeplot, "SepalLengthCm").a
 sns.FacetGrid(iris, hue="Species", height=6).map(sns.kdeplot, "SepalWidthCm").add_legend()
 ```
 
-![alt text](image-3.png)
-
-
-![alt text](image-5.png)
+![image](https://github.com/user-attachments/assets/01fa109f-f14d-4eaf-ac9c-e3daf54567bf)
 
 
 
-sugiere que la longitud del pétalo es un fuerte indicador para diferenciar especies.
-Setosa tiene pétalos más cortos y concentrados en un rango pequeño.
+![image](https://github.com/user-attachments/assets/673da407-9c82-4ba8-8904-fcc74f553c29)
 
-Versicolor y Virginica tienen pétalos más largos, pero con cierta superposición.
 
-💡 Conclusión: PetalLengthCm es una variable clave para la clasificación de especies.
 
-Setosa tiene valores mucho más bajos, mientras que Versicolor y Virginica se superponen en algunos puntos.
+💡 Conclusión 1 : sugiere que la longitud del pétalo(PetalLengthCm) es una variable clave para la clasificación/diferenciar de especies.
 
-Sin embargo, hay menos solapamiento que en PetalLengthCm, lo que sugiere que el ancho del pétalo también es un buen diferenciador de especies.
+                  Setosa tiene pétalos más cortos y concentrados en un rango pequeño.
 
-💡 Conclusión: PetalWidthCm es otra variable que ayuda significativamente a separar las especies.
+                  Versicolor y Virginica tienen pétalos más largos, pero con cierta superposición
+
+
+💡 Conclusión 2:  Sin embargo, hay menos solapamiento que en PetalLengthCm, lo que sugiere que el ancho del pétalo (PetalWidthCm) también es un buen diferenciador de especies.
+
+                  Setosa tiene valores mucho más bajos, mientras que Versicolor y Virginica se superponen en algunos puntos.
 
 ### 6 - Modelos de Machine Learning.
 
@@ -360,7 +364,8 @@ print('Son {} datos para entrenamiento y {} datos para prueba'.format(X_train.sh
 
 Salida:
 
-![alt text](<flor Iris con Python/10.png>)
+![image](https://github.com/user-attachments/assets/801e2b00-0fcf-48a8-acb8-e190d13ca94a)
+
 
 El método train_test_split devuelve 4 conjuntos:
 
@@ -460,7 +465,8 @@ plt.title("Matriz de Confusión")
 plt.show()
 
 ```
-![alt text](<flor Iris con Python/11.png>)
+![image](https://github.com/user-attachments/assets/c78d6224-7c5b-42d1-bfd7-aa5d8221205f)
+
 
 
 
@@ -476,120 +482,10 @@ Sin embargo, sería recomendable validar el modelo con otros conjuntos de datos 
 # Son 60 datos para entrenamiento y 90 datos para prueba
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.6, random_state=42)
 ```
-![alt text](<flor Iris con Python/12.png>)
-
-![alt text](image-2.png)
+![image](https://github.com/user-attachments/assets/06aaf587-7b58-4cd0-bbfc-22e1eb7dac4d)
 
 
-```py
+![image](https://github.com/user-attachments/assets/cf791fb5-d1ef-47b5-8258-ac282a11dd79)
 
 
 
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
-
-```py
-
-```
